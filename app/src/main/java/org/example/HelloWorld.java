@@ -1,4 +1,4 @@
-package java.stuff;
+package org.example;
 
 public class HelloWorld
 {
