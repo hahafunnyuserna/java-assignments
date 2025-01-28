@@ -14,46 +14,40 @@ public class Main {
 
         while (isValid == false)
         {
-            System.out.println("Please enter your age.\nEnter 'DEFAULT for a default value, or 'EXIT' to close the program.");
+            System.out.println("Please enter your age.\nEnter 'DEFAULT' for a default value, or 'EXIT' to close the program.\n");
             input = scan.nextLine();
-            input.toUpperCase();
 
-            boolean isInt;
-            try
+            input = input.toUpperCase();
+
+            if (input == "DEFAULT")
             {
-                Integer.parseInt(input);
-                isInt = true;
-            } catch (NumberFormatException ex) {
-                isInt = false;
-            }
-
-            if (input == "EXIT")
-            {
-                System.out.println("Goodbye.");
-                isValid = true;
-            } else if (input == "DEFAULT") {
-                temp = 55;
-                System.out.println("Your age is " + temp + ".");
-            } else if (isInt == true) {
-
+                temp = 35;
+            } else if (input.matches("\\d+")) {
                 temp = Integer.parseInt(input);
-
-                if (temp <= 0)
-                {
-                    System.out.println("ERROR: Impossible age.\nPlease go back to the womb.");
-                } else {
-                    if (temp >= minimum)
-                    {
-                        System.out.println("You're able to run for president!");
-                    } else {
-                        System.out.println("You're too young for the oval office.");
-                        
-                    }
-                    isValid = true;
-                }
-            } else {
-                System.out.println("ERROR: Not an actual number.");
             }
+
+            if (temp != 8675309) {
+
+                if (temp >= minimum)
+                {
+                    System.out.println("You're able to run for president!");
+                } else {
+                    System.out.println("You're too young for the oval office.");
+                }
+
+                isValid = true;
+            } else {
+                input.toUpperCase();
+
+                if (input == "EXIT")
+                {
+                    System.out.println("Goodbye.");
+                    isValid = true;
+                } else {
+                    System.out.println("ERROR: Not a valid number.\n");
+                }
+            }
+            
         }
         
         scan.close(); 
