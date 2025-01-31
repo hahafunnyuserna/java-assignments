@@ -1,14 +1,21 @@
 package org.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 class FactorMeBabyTest {
-    @Test void emptyForZero()
+    @BeforeEach
+    void setUp()
     {
         Factortron factor = new Factortron();
+    }
+
+    @Test public void emptyForZero()
+    {
+        
         assertEquals(factor.primeFactors(0), new ArrayList<>(Arrays.asList()));
         assertEquals(factor.primeFactors(1), new ArrayList<>(Arrays.asList()));
         assertEquals(factor.primeFactors(2), new ArrayList<>(Arrays.asList(2)));
