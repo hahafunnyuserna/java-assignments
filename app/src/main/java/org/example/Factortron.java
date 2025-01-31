@@ -1,12 +1,19 @@
 package org.example;
 
 import java.lang.Math;
-import java.util.ArrayList;
+import java.util.*;
  
 class Factortron {
     public ArrayList<Integer> primeFactors(Integer n)
     {
+        
+
         ArrayList<Integer> returnList = new ArrayList<>();
+
+        if (n == 0)
+        {
+            return returnList;
+        }
 
         while (n % 2 == 0)
         {
@@ -28,6 +35,7 @@ class Factortron {
             returnList.add(n);
         }
 
-    return returnList;
+      
+        return returnList;
     }
 }
