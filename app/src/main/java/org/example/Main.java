@@ -1,22 +1,20 @@
 package org.example;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args)
-    {   Scanner scan = new Scanner(System.in);
+    {   
+        Scanner scan = new Scanner(System.in);
+
+
+        System.out.println("Welcome!\nPlease input the number of hours you have worked this week:");
+        int hoursWorked = scan.nextInt();
+        System.out.println("Please enter the number of dependants on your insurance plan:");
+        int dependants = scan.nextInt();
+
+        double newPay = netPay(hoursWorked, dependants);
       
-        int input = 0;
         
-   
-        System.out.println("Please enter any number.");
-        input = scan.nextInt();
-
-        Factortron factor = new Factortron();
-        ArrayList<Integer> finalList = factor.primeFactors(input);
-        System.out.println("Prime factors of " + input + ":\n" + finalList);
-
-        scan.close();
     }
 }
