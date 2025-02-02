@@ -8,28 +8,27 @@ public class Calculator {
     {
         double totalPay = 0;
 
-        for (int i = hours; i > 0; i++)
+        if (hours > 40)
         {
-            totalPay += 16.78; //total pay for regular hours
-        }
-        for (int i = hours - 40; i > 0; i++)
-        {
-            totalPay += 25.17; //total pay for overtime
+            totalPay += (40 * 16.78);
+            totalPay += ((hours - 40) * 25.17);
+        } else {
+            totalPay += hours * 16.78;
         }
 
-        totalPay *= 0.94; //SS tax
-        totalPay *= 0.86; //fed. tax
-        totalPay *= 0.95; //state tax
-        totalPay -= 10; //union fees
+        double netPay = totalPay * 0.94; //SS tax
+        netPay -= (totalPay * 0.14); //fed. tax
+        netPay -= (totalPay * 0.05); //state tax
+        netPay -= 10; //union fees
 
         if (deps >= 3)
         {
-            totalPay -= 35; //insurance fees for 3 or more dependants
+            netPay -= 35; //insurance fees for 3 or more dependants
         } else {
-            totalPay -= 15; //insurance fees for less than 3 dependants
+            netPay -= 15; //insurance fees for less than 3 dependants
         }
 
-        return totalPay;
+        return netPay;
     }
 
 
