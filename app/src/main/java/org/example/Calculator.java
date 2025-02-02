@@ -4,16 +4,16 @@ import java.lang.Math;
 import java.util.*;
  
 public class Calculator {
-    public double netPay(int hours, double deps)
+    public double netPay(double pay, int hours, double deps)
     {
         double totalPay = 0;
 
         if (hours > 40)
         {
-            totalPay += (40 * 16.78);
-            totalPay += ((hours - 40) * 25.17);
+            totalPay += (40 * pay);
+            totalPay += ((hours - 40) * (pay * 1.5));
         } else {
-            totalPay += hours * 16.78;
+            totalPay += hours * pay;
         }
 
         double netPay = totalPay * 0.94; //SS tax

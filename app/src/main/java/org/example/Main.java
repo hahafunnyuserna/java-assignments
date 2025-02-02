@@ -7,12 +7,38 @@ public class Main {
     {   
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Welcome!\nPlease input the number of hours you have worked this week:");
-        int hoursWorked = scan.nextInt();
-        System.out.println("Please enter the number of dependants on your insurance plan:");
-        int dependants = scan.nextInt();
+        int hoursWorked = -5;
+        int dependants;
+        double wage = -5;
 
-        double gross = hoursWorked * 16.78;
+        System.out.println("Welcome!\n");
+
+
+        while (wage < 0)
+        {
+            System.out.println("Please input your hourly wage:");
+            wage = scan.nextDouble();
+            if (wage < 0)
+            {
+                System.out.println("ERROR - Negative value detected.");
+            }
+        }
+        
+        System.out.println("Please input the number of hours you have worked this week:");
+        hoursWorked = scan.nextInt();
+        if (hoursWorked < 0)
+        {
+            hoursWorked = 0;
+        }
+
+        System.out.println("Please enter the number of dependants on your insurance plan:");
+        dependants = scan.nextInt();
+        if (dependants < 0)
+        {
+            dependants = 0;
+        }
+
+        double gross = hoursWorked * wage;
         double socSec = gross * 0.06;
         double fedTax = gross * 0.14;
         double staTax = gross * 0.05;
@@ -25,10 +51,10 @@ public class Main {
         }
 
         Calculator calculator = new Calculator();
-        double finalPay = calculator.netPay(hoursWorked, dependants);
+        double finalPay = calculator.netPay(wage, hoursWorked, dependants);
 
-        System.out.println("You've worked " + hoursWorked + " hours.");
-        System.out.println("Your wage is $16.78 an hour.");
+        System.out.println("\nYou've worked " + hoursWorked + " hours.");
+        System.out.println("Your wage is $" + wage + " an hour.");
         System.out.println("Your gross pay is $" + gross + ".");
         System.out.println("\nYou're paying $" + socSec + " for social security.");
         System.out.println("You're paying $" + fedTax + " in federal taxes.");
