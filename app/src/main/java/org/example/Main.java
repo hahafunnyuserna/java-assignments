@@ -13,7 +13,6 @@ public class Main {
 
         System.out.println("Welcome!\n");
 
-
         while (wage < 0)
         {
             System.out.println("Please input your hourly wage:");
@@ -59,9 +58,22 @@ public class Main {
         System.out.println("\nYou're paying $" + socSec + " for social security.");
         System.out.println("You're paying $" + fedTax + " in federal taxes.");
         System.out.println("You're paying $" + staTax + " in state taxes.");
-        System.out.println("You're paying $10 in union fees.");
-        System.out.println("You're paying $" + insurance + " for insurance.");
 
+        if (finalPay > insurance + 10)
+        {
+            System.out.println("You're paying $10 in union fees.");
+            System.out.println("You're paying $" + insurance + " for insurance.");
+        } else {
+            finalPay += (10 + insurance);
+        }
+        
         System.out.println("\nYour final pay is $" + finalPay + ".");
+
+        if (finalPay < insurance + 10)
+        {
+            System.out.println("\nYou still need to pay $10 in union fees and $" + insurance + " for insurance.");
+        }
+
+        System.out.println("Goodbye!");
     }
 }
