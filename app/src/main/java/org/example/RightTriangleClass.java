@@ -22,4 +22,9 @@ class RightTriangle extends Shape
     {
         return "Right Triangle";
     }
+
+    @Override public int getSides()
+    {
+        return 3;
+    }
 }

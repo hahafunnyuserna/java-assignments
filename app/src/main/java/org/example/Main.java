@@ -9,8 +9,9 @@ class Main {
         String shapeName = s.getShape();
         double shapeArea = s.getArea();
         double shapePerim = s.getPerimeter();
+        int shapeSides = s.getSides();
 
-        return ("Shape: " + shapeName + "\nArea: " + shapeArea + "\nPerimeter: " + shapePerim);
+        return ("Shape: " + shapeName + " (" + shapeSides + " sides)\nArea: " + shapeArea + "\nPerimeter: " + shapePerim);
     }
 
     static void circleCreate()
@@ -55,8 +56,34 @@ class Main {
         scan.close();
     }
 
+    static void squareCreate()
+    {   
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Please enter the side length.");
+        double length = scan.nextDouble();
+
+        Shape squa = new Square(length);
+        System.out.println(printShapeToScreen(squa));
+
+        scan.close();
+    }
+
+    static void isophoclesCreate()
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Please enter the side length.");
+        double length = scan.nextDouble();
+
+        Shape isoc = new IsophoclesTriangle(length);
+        System.out.println(printShapeToScreen(isoc));
+        
+        scan.close();
+    }
+
     public static void main(String[] args)
     {
-        rightTriangleCreate();
+        isophoclesCreate();
     }
 }

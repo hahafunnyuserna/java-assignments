@@ -22,4 +22,9 @@ class Rectangle extends Shape
     {
         return "Rectangle";
     }
+
+    @Override public int getSides()
+    {
+        return 4;
+    }
 }

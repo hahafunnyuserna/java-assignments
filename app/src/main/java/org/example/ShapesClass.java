@@ -9,4 +9,10 @@ abstract class Shape
     abstract double getArea();
     abstract double getPerimeter();
     abstract String getShape();
+    abstract int getSides();
+}
+
+interface Polygon
+{
+
 }

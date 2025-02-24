@@ -21,4 +21,9 @@ class Circle extends Shape {
     {
         return "Circle";
     }
+
+    @Override public int getSides()
+    {
+        return 0;
+    }
 }
