@@ -23,6 +23,7 @@ class Main {
 
         Shape circ = new Circle(length);
         System.out.println(printShapeToScreen(circ));
+
         scan.close();
     }
 
@@ -82,8 +83,23 @@ class Main {
         scan.close();
     }
 
+    static void paralleloluminiumCreate()
+    {   
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Please enter the width.");
+        double width = scan.nextDouble();
+        System.out.println("Please enter the height.");
+        double height = scan.nextDouble();
+
+        Shape para = new Paralleloluminium(width, height);
+        System.out.println(printShapeToScreen(para));
+
+        scan.close();
+    }
+
     public static void main(String[] args)
     {
-        isophoclesCreate();
+        paralleloluminiumCreate();
     }
 }
