@@ -55,9 +55,9 @@ public class Converter {
             {
                 finalResult = "You have " + pounds + " pounds.";
             } else if (ounces == 1) {
-                finalResult = "You have " + pounds + " and 1 ounce.";
+                finalResult = "You have " + pounds + " pounds and 1 ounce.";
             } else {
-                finalResult = "You have " + pounds + " and " + ounces + " ounces.";
+                finalResult = "You have " + pounds + " pounds and " + ounces + " ounces.";
             }
         }
     
