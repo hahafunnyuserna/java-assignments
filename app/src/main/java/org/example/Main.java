@@ -69,7 +69,7 @@ public class Main {
         
         System.out.println("\nYour final pay is $" + finalPay + ".");
 
-        if (finalPay < insurance + 10)
+        if ((finalPay - (10 + insurance)) < insurance + 10)
         {
             System.out.println("\nYou still need to pay $10 in union fees and $" + insurance + " for insurance.");
         }
