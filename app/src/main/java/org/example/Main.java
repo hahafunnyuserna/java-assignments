@@ -1,28 +1,35 @@
 package org.example;
 
-import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
-public class Main {
 
+public class Main
+{
     
 
+    public static void main(String[] args)
+    {
+        FuzzyListGenerator maker = new FuzzyListGenerator();
+        FuzzyFinder finder = new FuzzyFinder();
 
-    public static void main(String... args) {
+        ArrayList<Fuzzy> sortedFuzzies = maker.sortedRainbowFuzzies();
+        ArrayList<Fuzzy> randomFuzzies = maker.randomizedRainbowFuzzies();
 
-        Calculator calc = new Calculator();
+        Fuzzy key = new Fuzzy("gold");
+      
+        int testOne = finder.linear(sortedFuzzies, key);
+        int testTwo = finder.binary(sortedFuzzies, key);
+        int testThree = finder.linear(randomFuzzies, key);
+        int testFour = finder.binary(randomFuzzies, key);
+      
+        System.out.println(testOne);
+        System.out.println(testTwo);
+        System.out.println(testThree);
+        System.out.println(testFour);
 
-        System.out.println(calc.value(1));
-        System.out.println(calc.value(2)); 
-        System.out.println(calc.value(4)); 
+        System.out.println("Your code goes here!");
 
-        System.out.println(calc.add(1, 1));
-        System.out.println(calc.add(2, 3)); 
-        System.out.println(calc.add(4, 2)); 
 
-        System.out.println(calc.subtract(1, 1));
-        System.out.println(calc.subtract(2, 3));
-        System.out.println(calc.subtract(4, 2)); 
     }
-
 }
