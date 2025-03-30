@@ -29,7 +29,6 @@ public class FuzzyFinder
         {
             int mid = low + (high - low) / 2;
             Fuzzy element = field.get(mid);
-
             
             if (field.get(mid).color.compareTo(key.color) < 0)
             {
