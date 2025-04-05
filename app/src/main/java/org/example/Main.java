@@ -9,10 +9,10 @@ public class Main {
         String input = "cheese_data.csv";
         String output = "output.txt";
 
-        try
+        try (BufferedReader br = new BufferedReader(new FileReader(input));
+       BufferedWriter bw = new BufferedWriter(new FileWriter(output))) {
         {
-            BufferedReader br = new BufferedReader(new FileReader("cheese_data.csv"));
-            BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
+            
 
             String line = br.readLine();
 
@@ -47,7 +47,14 @@ public class Main {
             br.close();
             
         } catch (FileNotFoundException fe) {
-            System.out.println("file : " + input + " not found");
+
+
+            System.out.println("File " + input + " not found.");
+
+
+
+            
+            
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
