@@ -5,7 +5,8 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         List<Integer> nums1 = List.of(1, 3, 5, 7);
         List<Integer> nums2 = List.of(2, 4, 6, 8);
         List<Integer> mergedNumbers = ListMerger.MergeLists(nums1, nums2);
