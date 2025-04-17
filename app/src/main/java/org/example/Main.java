@@ -5,61 +5,15 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String... args) {
-        String input = "cheese_data.csv";
-        String output = "output.txt";
-
-        try (BufferedReader br = new BufferedReader(new FileReader(input));
-       BufferedWriter bw = new BufferedWriter(new FileWriter(output))) {
-        {
-            
-
-            String line = br.readLine();
-
-            while (line != null) {
-
-                String[] cheeses = line.split(",");
-
-                for (String cheese : cheeses)
-                {
-                    bw.write(cheese);
-                    bw.write(", ");
-                }
-                bw.newLine();
-
-                String id = cheeses[0];
-                String manufCode = cheeses[1];
-                String manufType = cheeses[2];
-                double moisture = Double.parseDouble(cheeses[3]);
-                String flavorProfile = cheeses[4];
-                String traits = cheeses[5];
-                boolean organic = Boolean.valueOf(cheeses[6]);
-                String cheeseType = cheeses[7];
-                String milkType = cheeses[8];
-                String milkTreatment = cheeses[9];
-                String rindType = cheeses[10];
-                String cheeseName = cheeses[11];
-                String fatLevel = cheeses[12];
-                
-               
-            }
-
-            br.close();
-            
-        } catch (FileNotFoundException fe) {
-
-
-            System.out.println("File " + input + " not found.");
-
-
-
-            
-            
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
-
-        
-    }
-
+    public static void main(String[] args) {
+        List<Integer> nums1 = List.of(1, 3, 5, 7);
+        List<Integer> nums2 = List.of(2, 4, 6, 8);
+        List<Integer> mergedNumbers = ListMerger.MergeLists(nums1, nums2);
+        System.out.println(mergedNumbers);
+       
+        List<String> colors1 = List.of("Red", "Green", "Blue");
+        List<String> colors2 = List.of("White", "Black", "Orange", "Pink", "Fuschia");
+        List<String> mergedWords = ListMerger.MergeLists(colors1, colors2);
+        System.out.println(mergedWords);
+      }
 }
