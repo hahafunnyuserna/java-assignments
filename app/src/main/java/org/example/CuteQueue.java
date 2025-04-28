@@ -23,23 +23,24 @@ public class CuteQueue
         }
         
         queue.add(cuddly);
+        System.out.println("Added qutie: " + cuddly.description() + " " + cuddly.rating() + "/10.");
     }
 
-    public Cutie dequeue()
+    public void dequeue()
     {
         if (queue.isEmpty())
         {
             System.out.println("ERROR: Cannot remove items from an empty queue.");
-            return null;
+            return;
         }
-       
 
-        return queue.remove(0);
+        Cutie cuddly = queue.remove(0);
+        System.out.println("Removed qutie: " + cuddly.description() + " " + cuddly.rating() + "/10.");
     }
 
     public int size()
     {
-        System.out.println("The queue currently has " + queue.size() + " queties.");
+        System.out.println("The queue currently has " + queue.size() + " cuties.");
         return queue.size();
     }
 

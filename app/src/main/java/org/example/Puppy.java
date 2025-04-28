@@ -10,7 +10,5 @@ class Puppy implements Cutie
     public Integer rating()
     {
         return 7;
-    }
-
-    
+    }    
 }
