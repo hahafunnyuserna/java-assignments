@@ -6,14 +6,29 @@ public class Main {
 
     public static void main(String[] args)
     {
-        List<Integer> nums1 = List.of(1, 3, 5, 7);
-        List<Integer> nums2 = List.of(2, 4, 6, 8);
-        List<Integer> mergedNumbers = ListMerger.MergeLists(nums1, nums2);
-        System.out.println(mergedNumbers);
-       
-        List<String> colors1 = List.of("Red", "Green", "Blue");
-        List<String> colors2 = List.of("White", "Black", "Orange", "Pink", "Fuschia");
-        List<String> mergedWords = ListMerger.MergeLists(colors1, colors2);
-        System.out.println(mergedWords);
+        // Create a bunch of objects that conform to the Cutie interface
+Puppy puppy = new Puppy();
+Kitty kitty = new Kitty();
+ 
+// Create a queue data structure
+CuteQueue queue = new CuteQueue(9);
+ 
+// The size of the queue should equal zero since there are no objects in it
+queue.size();
+ 
+// Add the cuties to the queue
+queue.enqueue(puppy);
+queue.enqueue(kitty);
+ 
+// The size of the queue should equal three since there are three objects in it
+queue.size();
+ 
+// The first dequeue should return the puppy
+queue.dequeue();
+ 
+// The second dequeue should return the kitty
+queue.dequeue();
+ 
+
       }
 }

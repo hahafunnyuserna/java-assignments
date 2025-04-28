@@ -1,0 +1,16 @@
+package org.example;
+
+class Puppy implements Cutie
+{
+    public String description()
+    {
+        return "A little puppy with big, sad eyes.";
+    }
+    
+    public Integer rating()
+    {
+        return 7;
+    }
+
+    
+}
