@@ -1,19 +1,41 @@
+
 package org.example;
 
-import java.util.*;
-
 public class Main {
+    public static void main(String[] args) {
+        DishStack stack = new DishStack(8);
+        Dish oneDish = new Dish("A dish with one fish pattern on it");
+        Dish twoDish = new Dish("A dish with two fish patterns on it");
+        Dish redDish = new Dish("A dish with a red fish pattern on it");
+        Dish blueDish = new Dish("A dish with a blue fish pattern on it");
+        
+        // The variable stack_size should equal zero.
+        int stackSize = stack.size();
+        
+        stack.push(oneDish);
+        stack.push(twoDish);
+        stack.push(redDish);
+        stack.push(blueDish);
+        
+        // The variable sizeAfterPushes should equal four.
+        int sizeAfterPushes = stack.size();
+        
+        // The variable peekedDish should have a description of "A dish with a blue fish pattern on it"
+        Dish peekedDish = stack.peek();
+        
+        // The variable poppedDish should have a description of "A dish with a blue fish pattern on it"
+        Dish poppedDish = stack.pop();
+        
+        // The variable anotherPoppedDish should have a description of "A dish with a red fish pattern on it"
+        Dish anotherPoppedDish = stack.pop();
+        
+        // The variable finalSize should equal two.
+        int finalSize = stack.size();
 
-    public static void main(String[] args)
-    {
-        List<Integer> nums1 = List.of(1, 3, 5, 7);
-        List<Integer> nums2 = List.of(2, 4, 6, 8);
-        List<Integer> mergedNumbers = ListMerger.MergeLists(nums1, nums2);
-        System.out.println(mergedNumbers);
-       
-        List<String> colors1 = List.of("Red", "Green", "Blue");
-        List<String> colors2 = List.of("White", "Black", "Orange", "Pink", "Fuschia");
-        List<String> mergedWords = ListMerger.MergeLists(colors1, colors2);
-        System.out.println(mergedWords);
-      }
+        stack.clear();
+
+        //The variable finalFinalSize should equal zero.
+        int finalFinalSize = stack.size();
+
+    }
 }
