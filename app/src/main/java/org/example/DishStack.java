@@ -64,6 +64,7 @@ public class DishStack
         {
             Dish temp = dishes[last--];
         }
-        
+
+        System.out.println("Stack cleared.");
     }
 }
