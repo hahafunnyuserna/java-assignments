@@ -23,6 +23,7 @@ public class DishStack
             return;
         }
 
+        System.out.println("Added the following dish: " + dish.description);
         dishes[++last] = dish;
     }
 
